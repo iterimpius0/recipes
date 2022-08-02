@@ -1,1 +1,1 @@
-# recuoes
+# recipes
