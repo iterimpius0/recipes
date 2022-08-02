@@ -2,7 +2,7 @@ body {
     background-color: rgb(247, 247, 221);
     font-family: Lato, sans-serif;
     font-size: 20px;
-    color: rgb(179, 83, 45)
+    color: rgb(179, 83, 45);
 }
 
 .header{
@@ -10,19 +10,78 @@ body {
     color: rgb(247, 247, 221);
     font-size: 72px;
     text-align: center;
-    padding: 50px;
+    padding: 20px;
 }
 
 a:visited, h2, h3 {
     color: rgb(153, 56, 17);
 }
 
+.grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin-top: 50px;
+}
+
+.grid-item {
+    position: relative;
+}
+
 .img-small {
-    height: 200px;
-    width: auto;
+    height: auto;
+    width: 50%;
+    transition-property: opacity, transform;
+    transition-duration: 1s;
+}
+
+.recipe-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0%;
+    text-align: center;
+    font-size: 30px;
+}
+
+.grid-item:hover .img-small {
+    transform: scale(1.3);
+    opacity: 20%;
+}
+
+.grid-item:hover .recipe-title {
+    opacity: 100%;
+    transition: opacity 1s ease-in-out;
 }
 
 img {
     height: 500px;
     width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 50px;
+}
+
+ol {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ol li {
+    counter-increment: item;
+    display: flex;
+    width: 50%;
+    margin: 20px;
+}
+
+ol li:before {
+    content: "0" counter(item);
+    font-size: 50px;
+    font-weight: 700;
+    color: rgb(179, 83, 45);
+    line-height: 1;
 }
